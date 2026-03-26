@@ -1,6 +1,4 @@
 # Loja-TomaAi-
-Cada grupo deverá:
-
 Nome dos integrantes:
 Andressa Jorge Moreira - 63216
 Gustavo da Silva Pedroso - 87297
