@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>TomaAi</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .banner {
+            background: linear-gradient(135deg, #ff9800, #ff5722);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 24px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+        }
+
+        .price {
+            color: green;
+            font-weight: bold;
+        }
+
+        .btn {
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            background: #ff9800;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #e68900;
+        }
+    </style>
+</head>
+
+<body>
+
+<header style="position: relative; padding: 15px; background: #111; color: white; text-align: center;">
+    <h1>TomaAí 🍹</h1>
+
+    <a href="/carrinho" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%);">
+        <button class="btn">Carrinho 🛒</button>
+    </a>
+
+    <a href="/logout" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%);">
+        <button class="btn">Sair</button>
+    </a>
+</header>
+
+<div class="banner">
+    As melhores bebidas com os melhores preços!
+</div>
+
+<div class="container">
+    <h2>Produtos</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6F11-by6kKFK0ptBk66-Q3ODEYRrr7aefaQ&s">
+            <h3>Cervejas</h3>
+            <p class="price">A partir de R$ 8,00</p>
+
+            <!-- ALTERADO -->
+            <a href="/catalogo/cerveja">
+                <button class="btn">Catálogo</button>
+            </a>
+        </div>
+
+        <div class="card">
+            <img src="https://www.viavini.com.br/blog-de-vinhos/wp-content/uploads/2020/08/h4-vinhos-velho-mundo-e-novo-mundo-viavini-exclusivos-1024x559.jpg">
+            <h3>Vinhos</h3>
+            <p class="price">A partir de:R$ 45,00</p>
+
+            <!-- ALTERADO -->
+            <a href="/catalogo/vinho">
+                <button class="btn">Catálogo</button>
+            </a>
+        </div>
+
+        <div class="card">
+            <img src="https://saude.abril.com.br/wp-content/uploads/2018/11/destaque-tial-pagina.jpg?quality=50&strip=info&resize=1080,565&crop=1">
+            <h3>Sucos</h3>
+            <p class="price">A partir de:R$ 25,00</p>
+
+            <!-- ALTERADO -->
+            <a href="/catalogo/suco">
+                <button class="btn">Catálogo</button>
+            </a>
+        </div>
+
+        <div class="card">
+            <img src="https://io.convertiez.com.br/m/superpaguemenos/shop/products/images/55192/medium/kit-refrigerantes-coca-cola-fanta-kuat-e-sprite-2l_103103.jpg">
+            <h3>Refrigerantes</h3>
+            <p class="price">A partir de: R$ 6,00</p>
+
+            <!-- ALTERADO -->
+            <a href="/catalogo/refri">
+                <button class="btn">Catálogo</button>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

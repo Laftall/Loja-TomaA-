@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container{
+      background: white;
+      width: 350px;
+
+      padding: 30px;
+      border-radius: 15px;
+
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .login-container h2{
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .erro{
+      background: #ffe5e5;
+      color: red;
+
+      padding: 10px;
+      border-radius: 8px;
+
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .input-group{
+      margin-bottom: 18px;
+    }
+
+    .input-group label{
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .input-group input{
+      width: 100%;
+      padding: 12px;
+
+      border: 1px solid #ccc;
+      border-radius: 8px;
+
+      outline: none;
+      font-size: 14px;
+    }
+
+    .input-group input:focus{
+      border-color: #4facfe;
+    }
+
+    .login-btn{
+      width: 100%;
+      padding: 12px;
+
+      border: none;
+      border-radius: 8px;
+
+      background: #4facfe;
+      color: white;
+
+      font-size: 16px;
+      cursor: pointer;
+
+      transition: 0.3s;
+    }
+
+    .login-btn:hover{
+      background: #2196f3;
+    }
+
+    .cadastro{
+      text-align: center;
+      margin-top: 18px;
+    }
+
+    .cadastro a{
+      color: #6a1b9a;
+      text-decoration: none;
+    }
+
+    .cadastro a:hover{
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="login-container">
+
+    <h2>Login</h2>
+
+    {% if erro %}
+      <div class="erro">
+        {{ erro }}
+      </div>
+    {% endif %}
+
+    <form action="/logar" method="POST">
+
+      <div class="input-group">
+        <label for="email">Email</label>
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Digite seu email"
+          required
+        >
+      </div>
+
+      <div class="input-group">
+        <label for="password">Senha</label>
+
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Digite sua senha"
+          required
+        >
+      </div>
+
+      <button type="submit" class="login-btn">
+        Entrar
+      </button>
+
+    </form>
+
+    <div class="cadastro">
+      <p>
+        Não tem conta?
+        <a href="/cadastro">Cadastre-se</a>
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
