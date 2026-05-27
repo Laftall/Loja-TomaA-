@@ -48,6 +48,16 @@ header {
     cursor:pointer;
     margin:2px;
 }
+
+.btn:hover {
+    background: #e68900;
+}
+
+.empty {
+    text-align:center;
+    padding:40px;
+    color:#777;
+}
 </style>
 </head>
 
@@ -59,6 +69,15 @@ header {
 
 <div class="container">
 
+{% if not itens %}
+    <div class="empty">
+        <h2>Seu carrinho está vazio 🛒</h2>
+        <a href="/home">
+            <button class="btn">Voltar às compras</button>
+        </a>
+    </div>
+{% endif %}
+
 {% for i in itens %}
 <div class="item">
 
@@ -66,33 +85,54 @@ header {
 
     <div style="flex:1;">
         <h3>{{ i.nome }}</h3>
-        <p>Preço: R$ {{ i.preco }}</p>
-        <p>Subtotal: R$ {{ i.subtotal }}</p>
+        <p>Preço: R$ {{ "%.2f"|format(i.preco) }}</p>
+        <p>Subtotal: R$ {{ "%.2f"|format(i.subtotal) }}</p>
     </div>
 
     <div>
-        <a href="/remove_one/{{ i.id }}"><button class="btn">-</button></a>
+        <a href="/remove_one/{{ i.id }}">
+            <button class="btn">-</button>
+        </a>
+
         <strong>{{ i.qtd }}</strong>
-        <a href="/add_one/{{ i.id }}"><button class="btn">+</button></a>
+
+        <a href="/add_one/{{ i.id }}">
+            <button class="btn">+</button>
+        </a>
     </div>
 
 </div>
 {% endfor %}
 
-<h2>Total: R$ {{ total }}</h2>
+{% if itens %}
 
-<!-- BOTÃO FINALIZAR COMPRA (SÓ APARECE COM ITENS) -->
-{% if itens|length > 0 %}
-    <a href="/finalizar">
-        <button class="btn">Finalizar Compra</button>
+<h2>Total: R$ {{ "%.2f"|format(total) }}</h2>
+
+<div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px;">
+
+    <div style="display:flex; gap:10px;">
+        <a href="/home">
+            <button class="btn">Continuar comprando</button>
+        </a>
+
+        <a href="/finalizar">
+            <button class="btn">Finalizar Compra</button>
+        </a>
+    </div>
+
+    <a href="/limpar_carrinho">
+        <button class="btn" style="background:red;">
+            Limpar Carrinho
+        </button>
     </a>
-{% endif %}
 
-<a href="/home">
-    <button class="btn">Voltar</button>
-</a>
+</div>
+
+{% endif %}
 
 </div>
 
 </body>
 </html>
+
+

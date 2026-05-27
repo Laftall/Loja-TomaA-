@@ -47,13 +47,16 @@ header {
     border-radius:6px;
     cursor:pointer;
 }
+.btn:hover {
+    background: #e68900;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-    <h1>Catálogo: {{ categoria }}</h1>
+    <h1>Catálogo 📙</h1>
 </header>
 
 <div class="container">
@@ -63,13 +66,13 @@ header {
 
     <img src="{{ p.img }}">
     <h3>{{ p.nome }}</h3>
-    <p>R$ {{ p.preco }}</p>
+    <p style="color: green; font-weight: bold;">
+    R$ {{ p.preco }}
+    </p>
 
-    <a href="/add/{{ p.id }}/{{ p.nome }}/{{ p.preco }}">
+    <a href="/add/{{ p.id }}/{{ p.nome }}/{{ p.preco }}/{{ p.img }}">
         <button class="btn">Adicionar</button>
     </a>
-
-    
 
 </div>
 {% endfor %}
